@@ -2,7 +2,7 @@ public static class Q0190
 {
     public static uint ReverseBits(uint n)
     {
-        uint result = 0b00;
+        uint result = 0b0;
         for (int i = 0; i < 32; i++)
         {
             result <<= 1;
