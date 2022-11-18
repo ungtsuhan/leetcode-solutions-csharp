@@ -1,6 +1,23 @@
+using System.Text.RegularExpressions;
+
 public static class Q0125
 {
     public static bool IsPalindrome(string s)
+    {
+        s = Regex.Replace(s, "[^a-zA-Z0-9]", string.Empty);
+        int left = 0;
+        int right = s.Length - 1;
+        while (left < right)
+        {
+            if (char.ToUpper(s[left]) != char.ToUpper(s[right]))
+                return false;
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public static bool IsPalindrome_TwoPointer(string s)
     {
         int a = 0;
         int b = s.Length - 1;
