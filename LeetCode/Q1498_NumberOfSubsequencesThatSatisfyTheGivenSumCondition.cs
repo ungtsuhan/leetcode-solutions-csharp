@@ -4,6 +4,8 @@ namespace LeetCode
 {
     public class Q1498
     {
+        // Time Complexity: O(n log n) - due to Array.Sort()
+
         public static int NumSubseq(int[] nums, int target)
         {
             Array.Sort(nums);
@@ -22,12 +24,12 @@ namespace LeetCode
                 }
                 else
                 {
-                    totalCount += BigInteger.ModPow(2, right - left, MODULUS) % MODULUS;
+                    totalCount += BigInteger.ModPow(2, right - left, MODULUS);
                     left++;
                 }
             }
 
-            return (int)(totalCount);
+            return (int)(totalCount % MODULUS);
         }
     }
 }
