@@ -13,13 +13,13 @@
             {
                 var complement = target - nums[i];
 
-                if (!dict.ContainsKey(nums[i]))
-                    dict.Add(complement, i);
-                else
+                if (dict.ContainsKey(nums[i]))
                     return new int[] { dict[nums[i]], i };
+                else
+                    dict[complement] = i;
             }
 
-            throw new ArgumentException("No two numbers in the input array add up to the target value.");
+            throw new ArgumentException("No valid pairs found for the given target.");
         }
     }
 }
