@@ -2,6 +2,9 @@
 {
     public class Q2652
     {
+        // Time Complexity: O(n)
+        // Space Complexity: O(1)
+
         public static int SumOfMultiples(int n)
         {
             int sum = 0;
