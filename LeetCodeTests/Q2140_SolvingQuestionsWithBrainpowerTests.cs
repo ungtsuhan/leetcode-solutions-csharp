@@ -17,10 +17,10 @@ namespace LeetCodeTests
             // Arrange
 
             // Act
-            var actualMaxPoint = Q2140.MostPoints(questions);
+            var actualMaxPoints = Q2140.MostPoints(questions);
 
             // Assert
-            Assert.Equal(expectedMaxPoints, actualMaxPoint);
+            Assert.Equal(expectedMaxPoints, actualMaxPoints);
         }
     }
 }
