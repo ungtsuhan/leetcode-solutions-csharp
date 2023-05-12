@@ -15,7 +15,7 @@ namespace LeetCodeTests
             var actualResult = Q0347.TopKFrequent(num, k);
 
             // Assert
-            Assert.Equal(expectedResult, actualResult);
+            Assert.Equal(expectedResult.OrderBy(x => x), actualResult.OrderBy(x => x));
         }
     }
 }
