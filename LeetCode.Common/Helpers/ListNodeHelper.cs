@@ -4,7 +4,7 @@ namespace LeetCode.Common.Helpers
 {
     public class ListNodeHelper
     {
-        public static ListNode? BuildList(int[] values)
+        public static ListNode? CreateLinkedList(int[] values)
         {
             if (values == null || values.Length == 0) return null;
             var head = new ListNode(values[0]);
@@ -17,7 +17,7 @@ namespace LeetCode.Common.Helpers
             return head;
         }
 
-        public static int[] ListToArray(ListNode head)
+        public static int[] ConvertLinkedListToArray(ListNode head)
         {
             var result = new List<int>();
             var current = head;
