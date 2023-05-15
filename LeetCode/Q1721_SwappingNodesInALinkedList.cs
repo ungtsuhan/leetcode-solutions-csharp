@@ -4,6 +4,9 @@ namespace LeetCode
 {
     public class Q1721
     {
+        // Time Complexity: O(n)
+        // Space Complexity: O(1)
+
         public static ListNode SwapNodes(ListNode head, int k)
         {
             var curr = head;
