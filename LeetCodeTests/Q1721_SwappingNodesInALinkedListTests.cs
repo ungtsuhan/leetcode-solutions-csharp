@@ -11,11 +11,11 @@ namespace LeetCodeTests
         public void SwapNodes_ValidInput_ReturnsCorrectLinkedListAfterSwapNodes(int[] inputValues, int k, int[] expectedValues)
         {
             // Arrange
-            var list = ListNodeHelper.BuildList(inputValues);
+            var list = ListNodeHelper.CreateLinkedList(inputValues);
 
             // Act
             var actualLinkedList = Q1721.SwapNodes(list, k);
-            var actualValues = ListNodeHelper.ListToArray(actualLinkedList);
+            var actualValues = ListNodeHelper.ConvertLinkedListToArray(actualLinkedList);
 
             // Assert
             Assert.Equal(expectedValues, actualValues);
