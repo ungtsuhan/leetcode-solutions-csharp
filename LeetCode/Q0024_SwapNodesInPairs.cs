@@ -24,7 +24,7 @@ namespace LeetCode
                 prev.next.next = curr;
                 
                 prev = curr;
-                curr = curr?.next;
+                curr = curr.next;
             }
 
             return dummy.next;
