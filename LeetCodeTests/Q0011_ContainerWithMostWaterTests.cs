@@ -7,7 +7,7 @@ namespace LeetCodeTests
         [Theory]
         [InlineData(new[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }, 49)]
         [InlineData(new[] { 1, 1 }, 1)]
-        public void Test(int[] height, int expectedMaxArea)
+        public void MaxArea_ValidInput_ReturnsCorrectMaxArea(int[] height, int expectedMaxArea)
         {
             // Arrange
 
