@@ -11,8 +11,8 @@
             Array.Sort(nums2, nums1, Comparer<int>.Create((x, y) => y.CompareTo(x))); // O(nlog(n))
 
             PriorityQueue<int, int> heap = new();
-            int sum = 0;
-            int result = 0;
+            long sum = 0;
+            long result = 0;
 
             for (int i = 0; i < nums1.Length; i++) // TC: O(nlog(k))
             {
