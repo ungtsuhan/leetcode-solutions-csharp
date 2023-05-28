@@ -1,6 +1,4 @@
-﻿using LeetCode;
-
-namespace LeetCode.Tests
+﻿namespace LeetCode.Tests
 {
     public class Q1557Tests
     {

@@ -1,5 +1,3 @@
-using LeetCode;
-
 namespace LeetCode.Tests
 {
     public class Q0238Tests

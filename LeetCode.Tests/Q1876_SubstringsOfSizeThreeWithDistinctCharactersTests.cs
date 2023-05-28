@@ -1,5 +1,3 @@
-using LeetCode;
-
 namespace LeetCode.Tests
 {
     public class Q1876Tests
