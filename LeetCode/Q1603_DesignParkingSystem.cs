@@ -5,23 +5,18 @@
         // Time Complexity: O(1)
         // Space Complexity: O(1)
 
-        private readonly Dictionary<int, int> availableSpace;
+        private readonly int[] space;
         public ParkingSystem(int big, int medium, int small)
         {
-            availableSpace = new Dictionary<int, int>
-            {
-                { 1, big },
-                { 2, medium },
-                { 3, small }
-            };
+            space = new int[] { big, medium, small };
         }
     
         public bool AddCar(int carType)
         {
-            if (!availableSpace.ContainsKey(carType) || availableSpace[carType] == 0)
+            if (space[carType - 1] == 0)
                 return false;
 
-            availableSpace[carType]--;
+            space[carType - 1]--;
             return true;
         }
     }
