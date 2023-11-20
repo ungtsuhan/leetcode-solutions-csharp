@@ -13,8 +13,8 @@ public class Q0001
         {
             var complement = target - nums[i];
 
-            if (dict.ContainsKey(nums[i]))
-                return new int[] { dict[nums[i]], i };
+            if (dict.TryGetValue(nums[i], out int value))
+                return [value, i];
             else
                 dict[complement] = i;
         }

@@ -7,7 +7,7 @@ public class Q1456
 
     public static int MaxVowels(string s, int k)
     {
-        var vowelSet = new HashSet<char>(new[] { 'a', 'e', 'i', 'o', 'u' });
+        var vowelSet = new HashSet<char>([ 'a', 'e', 'i', 'o', 'u' ]);
         var maxVowelCount = 0;
         var currentVowelCount = 0;
 

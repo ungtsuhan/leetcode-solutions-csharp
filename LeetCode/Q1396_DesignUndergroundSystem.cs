@@ -2,8 +2,8 @@
 
 public class UndergroundSystem
 {
-    private readonly Dictionary<int, (string stationName, int time)> checkIns = new();
-    private readonly Dictionary<(string startStation, string endStation), (int totalTime, int count)> routes = new();
+    private readonly Dictionary<int, (string stationName, int time)> checkIns = [];
+    private readonly Dictionary<(string startStation, string endStation), (int totalTime, int count)> routes = [];
 
     public UndergroundSystem()
     {

@@ -8,7 +8,7 @@ public class ParkingSystem
     private readonly int[] space;
     public ParkingSystem(int big, int medium, int small)
     {
-        space = new int[] { big, medium, small };
+        space = [big, medium, small];
     }
 
     public bool AddCar(int carType)
