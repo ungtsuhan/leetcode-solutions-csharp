@@ -1,31 +1,30 @@
-﻿namespace LeetCode
+﻿namespace LeetCode;
+
+public class Q1456
 {
-    public class Q1456
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+
+    public static int MaxVowels(string s, int k)
     {
-        // Time Complexity: O(n)
-        // Space Complexity: O(1)
+        var vowelSet = new HashSet<char>(new[] { 'a', 'e', 'i', 'o', 'u' });
+        var maxVowelCount = 0;
+        var currentVowelCount = 0;
 
-        public static int MaxVowels(string s, int k)
+        for (var i = 0; i < s.Length; i++)
         {
-            var vowelSet = new HashSet<char>(new [] { 'a', 'e', 'i', 'o', 'u' });
-            var maxVowelCount = 0;
-            var currentVowelCount = 0;
+            if (maxVowelCount == k)
+                return k;
 
-            for (var i = 0; i < s.Length; i++)
-            {
-                if (maxVowelCount == k)
-                    return k;
-    
-                if (i >= k && vowelSet.Contains(s[i-k]))
-                    currentVowelCount--;
+            if (i >= k && vowelSet.Contains(s[i - k]))
+                currentVowelCount--;
 
-                if (vowelSet.Contains(s[i]))
-                    currentVowelCount++;
+            if (vowelSet.Contains(s[i]))
+                currentVowelCount++;
 
-                maxVowelCount = Math.Max(currentVowelCount, maxVowelCount);
-            }
-
-            return maxVowelCount;
+            maxVowelCount = Math.Max(currentVowelCount, maxVowelCount);
         }
+
+        return maxVowelCount;
     }
 }

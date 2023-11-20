@@ -1,21 +1,20 @@
-namespace LeetCode.Tests
+namespace LeetCode.Tests;
+
+public class Q1456Tests
 {
-    public class Q1456Tests
+    [Theory]
+    [InlineData("abciiidef", 3, 3)]
+    [InlineData("aeiou", 2, 2)]
+    [InlineData("leetcode", 3, 2)]
+    public void MaxVowels_ValidInput_ReturnsCorrectMaxVowelCount(string s, int k, int expectedVowelCount)
     {
-        [Theory]
-        [InlineData("abciiidef", 3, 3)]
-        [InlineData("aeiou", 2, 2)]
-        [InlineData("leetcode", 3, 2)]
-        public void MaxVowels_ValidInput_ReturnsCorrectMaxVowelCount(string s, int k, int expectedVowelCount)
-        {
-            // Arrange
+        // Arrange
 
-            // Act
-            var actualVowelCount = Q1456.MaxVowels(s, k);
+        // Act
+        var actualVowelCount = Q1456.MaxVowels(s, k);
 
-            // Assert
-            Assert.Equal(expectedVowelCount, actualVowelCount);
+        // Assert
+        Assert.Equal(expectedVowelCount, actualVowelCount);
 
-        }
     }
 }

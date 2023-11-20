@@ -1,28 +1,27 @@
-﻿namespace LeetCode
+﻿namespace LeetCode;
+
+public class Q0228
 {
-    public class Q0228
+    // Time Complexity: O(n)
+    // Space Complexity: O(n)
+
+    public static IList<string> SummaryRanges(int[] nums)
     {
-        // Time Complexity: O(n)
-        // Space Complexity: O(n)
+        var result = new List<string>();
 
-        public static IList<string> SummaryRanges(int[] nums)
+        for (var i = 0; i < nums.Length; i++)
         {
-            var result = new List<string>();
+            int start = nums[i];
 
-            for (var i = 0; i < nums.Length; i++)
-            {
-                int start = nums[i];
+            while (i + 1 < nums.Length && nums[i] + 1 == nums[i + 1])
+                i++;
 
-                while(i + 1 < nums.Length && nums[i] + 1 == nums[i + 1])
-                    i++;
-
-                if (start != nums[i])
-                    result.Add($"{start}->{nums[i]}");
-                else
-                    result.Add($"{nums[i]}");
-            }
-        
-            return result;
+            if (start != nums[i])
+                result.Add($"{start}->{nums[i]}");
+            else
+                result.Add($"{nums[i]}");
         }
+
+        return result;
     }
 }

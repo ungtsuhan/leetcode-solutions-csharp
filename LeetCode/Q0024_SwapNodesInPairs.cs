@@ -1,33 +1,32 @@
 ﻿using LeetCode.Models.ListNode;
 
-namespace LeetCode
+namespace LeetCode;
+
+public class Q0024
 {
-    public class Q0024
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+
+    public static ListNode? SwapPairs(ListNode head)
     {
-        // Time Complexity: O(n)
-        // Space Complexity: O(1)
+        if (head == null || head.next == null)
+            return head;
 
-        public static ListNode? SwapPairs(ListNode head)
+        var dummy = new ListNode(0, head);
+
+        var prev = dummy;
+        var curr = head;
+
+        while (curr?.next != null)
         {
-            if (head == null || head.next == null)
-                return head;
-        
-            var dummy = new ListNode(0, head);
-            
-            var prev = dummy;
-            var curr = head;
+            prev.next = curr.next;
+            curr.next = prev.next.next;
+            prev.next.next = curr;
 
-            while (curr?.next != null)
-            {
-                prev.next = curr.next;
-                curr.next = prev.next.next;
-                prev.next.next = curr;
-                
-                prev = curr;
-                curr = curr.next;
-            }
-
-            return dummy.next;
+            prev = curr;
+            curr = curr.next;
         }
+
+        return dummy.next;
     }
 }

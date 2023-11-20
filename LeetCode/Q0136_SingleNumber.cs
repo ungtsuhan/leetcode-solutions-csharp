@@ -1,18 +1,17 @@
-﻿namespace LeetCode
+﻿namespace LeetCode;
+
+public class Q0136
 {
-    public class Q0136
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+
+    public static int SingleNumber(int[] nums)
     {
-        // Time Complexity: O(n)
-        // Space Complexity: O(1)
+        var xor = 0;
 
-        public static int SingleNumber(int[] nums)
-        {
-            var xor = 0;
-        
-            foreach (var num in nums)
-                xor ^= num;
+        foreach (var num in nums)
+            xor ^= num;
 
-            return xor;
-        }
+        return xor;
     }
 }

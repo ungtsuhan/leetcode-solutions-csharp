@@ -1,43 +1,42 @@
-﻿namespace LeetCode
+﻿namespace LeetCode;
+
+public class Q0785
 {
-    public class Q0785
+    // Time Complexity: O(v + e)
+    // Space Complexity: O(v)
+
+    public static bool IsBipartite(int[][] graph)
     {
-        // Time Complexity: O(v + e)
-        // Space Complexity: O(v)
+        var array = new int[graph.Length];
+        var queue = new Queue<int>();
 
-        public static bool IsBipartite(int[][] graph)
+        for (int i = 0; i < graph.Length; i++)
         {
-            var array = new int[graph.Length];
-            var queue = new Queue<int>();
+            if (array[i] != 0)
+                continue;
 
-            for (int i = 0; i < graph.Length; i++)
+            queue.Enqueue(i);
+            array[i] = 1; // odd = 1, even = -1
+
+            while (queue.Count > 0)
             {
-                if (array[i] != 0)
-                    continue;
+                int num = queue.Dequeue();
 
-                queue.Enqueue(i);
-                array[i] = 1; // odd = 1, even = -1
-
-                while (queue.Count > 0)
+                foreach (int neighbour in graph[num])
                 {
-                    int num = queue.Dequeue();
-
-                    foreach (int neighbour in graph[num])
+                    if (array[neighbour] == 0)
                     {
-                        if (array[neighbour] == 0)
-                        {
-                            queue.Enqueue(neighbour);
-                            array[neighbour] = -array[num];
-                        }
-                        else if (array[neighbour] == array[num])
-                        {
-                            return false;
-                        }
+                        queue.Enqueue(neighbour);
+                        array[neighbour] = -array[num];
+                    }
+                    else if (array[neighbour] == array[num])
+                    {
+                        return false;
                     }
                 }
             }
-
-            return true;
         }
+
+        return true;
     }
 }

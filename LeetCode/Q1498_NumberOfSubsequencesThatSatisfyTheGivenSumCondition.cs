@@ -1,35 +1,34 @@
 ﻿using System.Numerics;
 
-namespace LeetCode
+namespace LeetCode;
+
+public class Q1498
 {
-    public class Q1498
+    // Time Complexity: O(n log n) - due to Array.Sort()
+
+    public static int NumSubseq(int[] nums, int target)
     {
-        // Time Complexity: O(n log n) - due to Array.Sort()
+        Array.Sort(nums);
 
-        public static int NumSubseq(int[] nums, int target)
+        const int MODULUS = 1_000_000_007;
+
+        int left = 0;
+        int right = nums.Length - 1;
+        BigInteger totalCount = 0;
+
+        while (left <= right)
         {
-            Array.Sort(nums);
-
-            const int MODULUS = 1_000_000_007;
-
-            int left = 0;
-            int right = nums.Length - 1;
-            BigInteger totalCount = 0;
-
-            while (left <= right)
+            if (nums[left] + nums[right] > target)
             {
-                if (nums[left] + nums[right] > target)
-                {
-                    right--;
-                }
-                else
-                {
-                    totalCount += BigInteger.ModPow(2, right - left, MODULUS);
-                    left++;
-                }
+                right--;
             }
-
-            return (int)(totalCount % MODULUS);
+            else
+            {
+                totalCount += BigInteger.ModPow(2, right - left, MODULUS);
+                left++;
+            }
         }
+
+        return (int)(totalCount % MODULUS);
     }
 }

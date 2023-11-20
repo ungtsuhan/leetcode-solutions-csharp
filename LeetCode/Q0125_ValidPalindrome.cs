@@ -1,37 +1,36 @@
-﻿namespace LeetCode
+﻿namespace LeetCode;
+
+public class Q0125
 {
-    public class Q0125
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+
+    public static bool IsPalindrome(string s)
     {
-        // Time Complexity: O(n)
-        // Space Complexity: O(1)
+        int l = 0;
+        int r = s.Length - 1;
 
-        public static bool IsPalindrome(string s)
+        while (l < r)
         {
-            int l = 0;
-            int r = s.Length - 1;
-            
-            while (l < r)
+            if (!char.IsLetterOrDigit(s[l]))
             {
-                if (!char.IsLetterOrDigit(s[l]))
-                {
-                    l++;
-                    continue;
-                }
-
-                if (!char.IsLetterOrDigit(s[r]))
-                {
-                    r--;
-                    continue;
-                }
-
-                if (char.ToLower(s[l]) != char.ToLower(s[r]))
-                    return false;
-
                 l++;
-                r--;
+                continue;
             }
 
-            return true;
+            if (!char.IsLetterOrDigit(s[r]))
+            {
+                r--;
+                continue;
+            }
+
+            if (char.ToLower(s[l]) != char.ToLower(s[r]))
+                return false;
+
+            l++;
+            r--;
         }
+
+        return true;
     }
 }

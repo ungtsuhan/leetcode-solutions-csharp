@@ -1,23 +1,22 @@
-﻿namespace LeetCode
+﻿namespace LeetCode;
+
+public class Q0217
 {
-    public class Q0217
+    // Time Complexity: O(n)
+    // Space Complexity: O(n)
+
+    public static bool ContainsDuplicate(int[] nums)
     {
-        // Time Complexity: O(n)
-        // Space Complexity: O(n)
+        var set = new HashSet<int>();
 
-        public static bool ContainsDuplicate(int[] nums)
+        foreach (var num in nums)
         {
-            var set = new HashSet<int>();
-
-            foreach (var num in nums)
-            {
-                if (set.Contains(num))
-                    return true;
-                else
-                    set.Add(num);
-            }
-
-            return false;
+            if (set.Contains(num))
+                return true;
+            else
+                set.Add(num);
         }
+
+        return false;
     }
 }

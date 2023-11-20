@@ -1,19 +1,18 @@
-namespace LeetCode.Tests
+namespace LeetCode.Tests;
+
+public class Q0125Tests
 {
-    public class Q0125Tests
+    [Theory]
+    [InlineData("A man, a plan, a canal: Panama", true)]
+    [InlineData("race a car", false)]
+    public void IsPalindrome_ValidInput_ReturnsCorrectResult(string s, bool expectedResult)
     {
-        [Theory]
-        [InlineData("A man, a plan, a canal: Panama", true)]
-        [InlineData("race a car", false)]
-        public void IsPalindrome_ValidInput_ReturnsCorrectResult(string s, bool expectedResult)
-        {
-            // Arrange
+        // Arrange
 
-            // Act
-            var actualResult = Q0125.IsPalindrome(s);
+        // Act
+        var actualResult = Q0125.IsPalindrome(s);
 
-            // Assert
-            Assert.Equal(expectedResult, actualResult);
-        }
+        // Assert
+        Assert.Equal(expectedResult, actualResult);
     }
 }

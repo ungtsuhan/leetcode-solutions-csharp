@@ -1,30 +1,29 @@
 ﻿using LeetCode.Common.Models;
 
-namespace LeetCode
+namespace LeetCode;
+
+public class Q0530
 {
-    public class Q0530
+    int minDifference = int.MaxValue;
+    TreeNode? prevNode;
+
+    public int GetMinimumDifference(TreeNode root)
     {
-        int minDifference = int.MaxValue;
-        TreeNode? prevNode;
+        DFS(root);
+        return minDifference;
+    }
 
-        public int GetMinimumDifference(TreeNode root)
-        {
-            DFS(root);
-            return minDifference;
-        }
+    private void DFS(TreeNode? node)
+    {
+        if (node == null)
+            return;
 
-        private void DFS(TreeNode? node)
-        {
-            if (node == null)
-                return;
+        DFS(node.left);
 
-            DFS(node.left);
+        if (prevNode != null)
+            minDifference = Math.Min(minDifference, node.val - prevNode.val);
 
-            if (prevNode != null)
-                minDifference = Math.Min(minDifference, node.val - prevNode.val);
-
-            prevNode = node;
-            DFS(node.right);
-        }
+        prevNode = node;
+        DFS(node.right);
     }
 }

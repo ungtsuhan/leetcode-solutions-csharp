@@ -1,21 +1,20 @@
-﻿namespace LeetCode
+﻿namespace LeetCode;
+
+public class Q1572
 {
-    public class Q1572
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+
+    public static int DiagonalSum(int[][] mat)
     {
-        // Time Complexity: O(n)
-        // Space Complexity: O(1)
-    
-        public static int DiagonalSum(int[][] mat)
-        {
-            int sum = 0;
+        int sum = 0;
 
-            for (int i = 0; i < mat.Length; i++)
-                sum += mat[i][i] + mat[i][mat.Length-1-i];
+        for (int i = 0; i < mat.Length; i++)
+            sum += mat[i][i] + mat[i][mat.Length - 1 - i];
 
-            if (mat.Length % 2 != 0)
-                sum -= mat[mat.Length/2][mat.Length/2];
+        if (mat.Length % 2 != 0)
+            sum -= mat[mat.Length / 2][mat.Length / 2];
 
-            return sum;
-        }
+        return sum;
     }
 }
