@@ -6,12 +6,15 @@ public class Q1814
 
     public static int CountNicePairs(int[] nums)
     {
+        // Time Complexity: O(n * log10(num))
+        // Space Complexity: O(n)
+
         var numOfPairs = 0;
         Dictionary<int, int> dict = [];
-        foreach (var num in nums)
+        foreach (var num in nums) // O(n)
         {
-            int numMinusReverseNum = num - Reverse(num);
-            if (dict.TryGetValue(numMinusReverseNum, out int currentCount))
+            int numMinusReverseNum = num - Reverse(num); // O(log10(num))
+            if (dict.TryGetValue(numMinusReverseNum, out int currentCount)) // O(1)
             {
                 numOfPairs = (numOfPairs + currentCount) % MODULUS;
                 dict[numMinusReverseNum]++;
@@ -24,7 +27,7 @@ public class Q1814
         return numOfPairs;
     }
 
-    private static int Reverse(int num)
+    private static int Reverse(int num) // O(numOfDigits) or O(log10(num))
     {
         int result = 0;
         while (num > 0)
