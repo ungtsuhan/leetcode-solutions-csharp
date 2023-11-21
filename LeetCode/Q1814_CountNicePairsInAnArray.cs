@@ -2,13 +2,13 @@
 
 public class Q1814
 {
+    // Time Complexity: O(n * log10(num))
+    // Space Complexity: O(n)
+
     private const int MODULUS = 1_000_000_007;
 
     public static int CountNicePairs(int[] nums)
     {
-        // Time Complexity: O(n * log10(num))
-        // Space Complexity: O(n)
-
         var numOfPairs = 0;
         Dictionary<int, int> dict = [];
         foreach (var num in nums) // O(n)
